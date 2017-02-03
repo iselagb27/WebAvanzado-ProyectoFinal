@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <title>J&M Boutique</title>
+
+    <style type="text/css">
+      html, body {
+        height: 100%;
+        margin: 50;
+        padding: 0;
+        background-color: #e0e0e0;
+      }
+      td, h4 {
+          font-family: "Arial", Georgia, Serif;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!--Directiva para Ligar variables-->
+
+    <table border="0" width="100%" cellpadding="10">
+      <tr>
+        <td colspan="2" style="text-align:center;">
+          <img src="img/librovisitas.png" width="30%">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" ng-model="nombre" placeholder="Ingresa tu Nombre" size="30"></input>
+        </td>
+        <td>
+          <input type="text" ng-model="email" placeholder="Ingresa tu e-mail" size="30"></input>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Selecciona estado:</label>
+          <select ng-model="estado">
+            <option value="Chiapas">Chiapas</option>
+            <option value="Ciudad de México">Ciudad de México</option>
+            <option value="Guadalajara">Guadalajara</option>
+            <option value="Guanajuato">Guanajuato</option>
+            <option value="Guerreto">Guerrero</option>
+            <option value="Monterrey">Monterrey</option>
+            <option value="Puebla">Puebla</option>
+            <option value="Quéretaro">Querétaro</option>
+            <option value="Sonora">Sonora</option>
+            <option value="Veracruz">Veracruz</option>
+          </select>
+        </td>
+        <td>
+          <label>Seleccione género: </label>
+          <input type="radio" checked="checked" ng-model="genero" value="Masculino" >Masculino
+
+          <input type="radio" ng-model="genero" value="Femenino">Femenino
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      <h4>Datos personales:</h4>
+    <table width="100%" border="0" cellpadding="10">
+      <tr>
+        <td>
+          <table class="tabla">
+            <tr>
+              <td>
+                <label class="etiquetas">Nombre: </label>{{nombre|uppercase}}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label class="etiquetas">e-mail: </label>{{email|lowercase}}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label class="etiquetas">El estado seleccionado es: </label>{{estado}}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label class="etiquetas">El género seleccionado es: </label>{{ genero }}
+              </td>
+            </tr>
+          </table>
+          <table width="100%" border="0">
+            <tr>
+              <td colspan="2" style="text-align:center;">
+                <input type="button" class="registro2" id="registro" value="Registrar">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <p>
+
+    <!-- Footer -->
+    <footer class="piepagina">
+        <p></p>
+        <p>Copyright &copy; 2017 Isela Garcí­a Bravo</p>
+    </footer>
+    <!-- fin Footer -->
+
+  </body>
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+</html>

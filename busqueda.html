@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <title>J&M Boutique</title>
+  </head>
+
+  <body ng-controller="productCtrl as product">
+
+  <!-- Menú navegación -->
+
+  <nav>
+    <div class="nav-wrapper black">
+      <a href="index.html" class="brand-logo"><img src="img/logo1.jpg" width="14%" height="14%"></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="damas.html">Damas</a></li>
+        <li><a href="caballeros.html">Caballeros</a></li>
+        <li><a href="infantil.html">Infantil</a></li>
+        <li><a href="accesorios.html">Accesorios</a></li>
+        <li class="teal"><a href="busqueda.html"><i class="material-icons">search</i></a></li>
+        <li><a href="contacto.html"><i class="material-icons">contacts</i></a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="damas.html">Damas</a></li>
+        <li><a href="caballeros.html">Caballeros</a></li>
+        <li><a href="infantil.html">Infantil</a></li>
+        <li><a href="accesorios.html">Accesorios</a></li>
+        <li class="teal"><a href="busqueda.html"><i class="material-icons">search</i></a></li>
+        <li><a href="contacto.html"><i class="material-icons">contacts</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- fin Menú navegación -->
+
+  <div class="container">
+
+    <div class="row">
+      <p class="accesorios">
+        Busca dentro de nuestros productos, encontrarás estilo, calidad y moda actual.
+      </p>
+    </div><!--fin row-->
+
+    <div class="row">
+      <input type="text" placeholder="Teclea el producto" ng-model="search">
+    </div><!--fin row-->
+
+
+    <div class="row">
+      <div class="col s12 m4" ng-repeat="m in product.collection|filter:search|orderBy:'name':1">
+        <div class="card">
+          <span class="card-title ">{{m.name}}</span>
+          <div class="card-image">
+            <img src="{{m.img}}">
+          </div>
+          <div class="card-content">
+            <p>Precio: {{m.precio}}</p>
+            <p>Tallas: {{m.tallas}}</p>
+            <p>Colores: {{m.colores}}</p>
+          </div>
+        </div><!-- fin card-->
+      </div><!-- fin col-->
+    </div><!--fin row-->
+
+  </div><!--fin container-->
+
+
+  <!-- Footer -->
+  <div class="container">
+    <div class="row">
+
+      <footer class="piepagina">
+        <div class="col m6">
+            <div class="row">
+                <div class="col l12">
+                    <p>Copyright &copy; 2017 Isela Garcí­a Bravo</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col m6">
+          <div class="col m6">
+            <p>Síguenos a través de:</p>
+          </div>
+          <div class="col m6">
+            <a href="https://www.facebook.com/isela.garcia.90813" target="_blank"><img src="img/facebook.jpg"></a>
+            <a href="https://twitter.com/ISELA_GB27" target="_blank"><img src="img/twitter.png"></a>
+            <a href="https://www.youtube.com/watch?v=ebHoH1AriL4" target="_blank"><img src="img/youtube.jpg" target="_blank"></a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+  <!-- fin Footer -->
+
+  </body>
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+
+  <script type="text/javascript">
+    $(".button-collapse").sideNav();
+  </script>
+
+</html>
